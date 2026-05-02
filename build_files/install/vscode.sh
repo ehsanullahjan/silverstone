@@ -10,6 +10,6 @@ cat <<-EOF >/etc/yum.repos.d/vscode.repo
 	gpgcheck=1
 	gpgkey=https://packages.microsoft.com/keys/microsoft.asc
 EOF
-sed -i "s/enabled=.*/enabled=0/g" /etc/yum.repos.d/vscode.repo
+dnf config-manager setopt code.enabled=0
 
-dnf -y install --enablerepo=code code
+dnf -y --enable-repo=code install code

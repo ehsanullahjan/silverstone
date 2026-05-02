@@ -12,6 +12,6 @@ cat <<-EOF >/etc/yum.repos.d/1password.repo
 	repo_gpgcheck=1
 	gpgkey="https://downloads.1password.com/linux/keys/1password.asc"
 EOF
-sed -i "s/enabled=.*/enabled=0/g" /etc/yum.repos.d/1password.repo
+dnf config-manager setopt 1password.enabled=0
 
-dnf -y install --enable-repo=1password 1password
+dnf -y --enable-repo=1password install 1password

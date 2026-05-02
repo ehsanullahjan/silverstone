@@ -16,7 +16,14 @@ set -ouex pipefail
 /ctx/install/docker.sh
 /ctx/install/podman.sh
 /ctx/install/libvirt.sh
-
-/ctx/install/fonts.sh
-/ctx/install/packages.sh
 /ctx/install/rocm.sh
+
+/ctx/install/carapace.sh
+/ctx/install/dysk.sh
+/ctx/install/fonts.sh
+/ctx/install/git.sh
+/ctx/install/starship.sh
+/ctx/install/yazi.sh
+/ctx/install/packages.sh
+
+/ctx/cleanup.sh

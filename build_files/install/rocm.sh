@@ -6,4 +6,5 @@ dnf -y install \
 	rocm-hip \
 	rocminfo \
 	rocm-opencl \
-	rocm-smi
+	rocm-smi \
+	rocm-clinfo

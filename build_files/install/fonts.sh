@@ -3,12 +3,10 @@
 set -ouex pipefail
 
 dnf -y copr enable che/nerd-fonts
+dnf config-manager setopt copr:copr.fedorainfracloud.org:che:nerd-fonts.enabled=0
 
-dnf -y install \
+dnf -y --enable-repo=copr:copr.fedorainfracloud.org:che:nerd-fonts install \
 	cascadia-code-fonts \
 	fira-code-fonts \
-	jetbrains-mono-fonts-all
-
-dnf -y install nerd-fonts
-
-sed -i "s/enabled=.*/enabled=0/g" /etc/yum.repos.d/_copr:copr.fedorainfracloud.org:che:nerd-fonts.repo
+	jetbrains-mono-fonts-all \
+	nerd-fonts
