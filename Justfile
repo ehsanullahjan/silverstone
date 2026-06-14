@@ -1,5 +1,5 @@
 export image_name := env("IMAGE_NAME", "silverstone")
-export default_tag := env("DEFAULT_TAG", "44")
+export default_tag := env("DEFAULT_TAG", "stable")
 export bib_image := env("BIB_IMAGE", "quay.io/centos-bootc/bootc-image-builder:latest")
 
 alias build-vm := build-qcow2
