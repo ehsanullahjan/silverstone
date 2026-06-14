@@ -4,16 +4,7 @@ COPY build_files /build_files
 COPY system_files /system_files
 
 # Base Image
-FROM ghcr.io/ublue-os/silverblue-main:44
-
-## Other possible base images include:
-# FROM ghcr.io/ublue-os/bazzite:latest
-# FROM ghcr.io/ublue-os/bluefin-nvidia:stable
-#
-# ... and so on, here are more base images
-# Universal Blue Images: https://github.com/orgs/ublue-os/packages
-# Fedora base image: quay.io/fedora/fedora-bootc:41
-# CentOS base images: quay.io/centos-bootc/centos-bootc:stream10
+FROM quay.io/fedora/fedora-silverblue:44
 
 ### [IM]MUTABLE /opt
 ## Some bootable images, like Fedora, have /opt symlinked to /var/opt, in order to
@@ -23,7 +14,6 @@ FROM ghcr.io/ublue-os/silverblue-main:44
 ##
 ## Uncomment the following line if one desires to make /opt immutable and be able to be used
 ## by the package manager.
-
 RUN rm /opt && mkdir /opt
 
 ### MODIFICATIONS
