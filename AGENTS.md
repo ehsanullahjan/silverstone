@@ -2,7 +2,7 @@
 
 ## Build & Deploy Commands
 
-- **Build container image**: `just build $target_image $tag` (default: `silverstone:44`)
+- **Build container image**: `just build $target_image $tag` (default: `silverstone:stable`)
 - **Build VM image (qcow2)**: `just build-qcow2` or `just build-vm`
 - **Build ISO**: `just build-iso`
 - **Run VM**: `just run-vm-qcow2` (web UI at http://localhost:8006)
@@ -11,7 +11,7 @@
 ## Critical Constraints
 
 - **Cosign signing required**: Builds fail without `cosign.key` in repo (never commit it). Set `SIGNING_SECRET` GitHub secret.
-- **Image naming**: Default image name is `silverstone`, default tag is `44` (Fedora version).
+- **Image naming**: Default image name is `silverstone`, default tag is `stable`.
 - **Rootful podman**: VM/ISO builds require rootful podman via `just sudoif` helper in Justfile:56.
 - **BIB image**: Bootc Image Builder uses `quay.io/centos-bootc/bootc-image-builder:latest` (configurable via `BIB_IMAGE` env).
 
