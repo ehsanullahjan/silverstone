@@ -6,9 +6,12 @@ set -ouex pipefail
 PACKAGES=(
     bat
     btop
+    ddcutil
+    distrobox
     eza
     fastfetch
     fd-find
+    fzf
     grc
     ngrep
     nmap
