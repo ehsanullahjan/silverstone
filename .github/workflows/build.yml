@@ -142,7 +142,7 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Push To GHCR
+      - name: Push To GHCR (Image with Primary Tag)
         uses: redhat-actions/push-to-registry@5ed88d269cf581ea9ef6dd6806d01562096bee9c # v2
         if: github.event_name != 'pull_request' && github.ref == format('refs/heads/{0}', github.event.repository.default_branch)
         id: push
@@ -152,11 +152,35 @@ jobs:
         with:
           registry: ${{ env.IMAGE_REGISTRY }}
           image: ${{ env.IMAGE_NAME }}
-          tags: ${{ steps.metadata.outputs.tags }}
+          tags: ${{ env.DEFAULT_TAG }}
           username: ${{ env.REGISTRY_USER }}
           password: ${{ env.REGISTRY_PASSWORD }}
           extra-args: |
             --compression-format=zstd:chunked
+
+      # Apply all secondary tags remotely to the primary-tagged image that's already pushed
+      - name: Apply Secondary Tags Remotely
+        if: github.event_name != 'pull_request' && github.ref == format('refs/heads/{0}', github.event.repository.default_branch)
+        env:
+          REGISTRY_USER: ${{ github.actor }}
+          REGISTRY_PASSWORD: ${{ github.token }}
+        run: |
+          REGISTRY="${{ env.IMAGE_REGISTRY }}"
+          IMAGE="${{ env.IMAGE_NAME }}"
+          PRIMARY_TAG="${{ env.DEFAULT_TAG }}"
+          FULL_IMAGE_REF="${REGISTRY}/${IMAGE}"
+
+          # Parse all secondary tags and apply them remotely via skopeo
+          skopeo login "${REGISTRY}" -u "${REGISTRY_USER}" -p "${REGISTRY_PASSWORD}"
+          echo "${{ steps.metadata.outputs.tags }}" | tr ',' '\n' | while read -r tag; do
+            tag=$(echo "$tag" | xargs)
+            if [ -n "$tag" ] && [ "$tag" != "$PRIMARY_TAG" ]; then
+              echo "Remotely linking tag: ${tag} to ${PRIMARY_TAG}..."
+              skopeo copy --all \
+                docker://${FULL_IMAGE_REF}:${PRIMARY_TAG} \
+                docker://${FULL_IMAGE_REF}:${tag}
+            fi
+          done
 
       # This section is optional and only needs to be enabled if you plan on distributing
       # your project for others to consume. You will need to create a public and private key
