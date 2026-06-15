@@ -1,0 +1,24 @@
+{
+  "default": [
+    {
+      "type": "reject"
+    }
+  ],
+  "transports": {
+    "docker-daemon": {
+      "": [{ "type": "insecureAcceptAnything" }]
+    },
+    "docker": {
+      "": [{ "type": "insecureAcceptAnything" }],
+      "ghcr.io/ehsanullahjan/silverstone": [
+        {
+          "type": "sigstoreSigned",
+          "keyPath": "/etc/pki/containers/silverstone.pub",
+          "signedIdentity": {
+            "type": "matchRepository"
+          }
+        }
+      ]
+    }
+  }
+}
