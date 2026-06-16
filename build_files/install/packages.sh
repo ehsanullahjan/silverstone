@@ -2,7 +2,6 @@
 
 set -ouex pipefail
 
-# Install packages
 PACKAGES=(
     bat
     btop
@@ -13,6 +12,8 @@ PACKAGES=(
     fd-find
     fzf
     grc
+    lshw
+    lm_sensors
     ngrep
     nmap
     nvtop
@@ -20,6 +21,7 @@ PACKAGES=(
     socat
     tealdeer
     tmux
+    trash-cli
     vim
     xdg-terminal-exec
     zoxide
