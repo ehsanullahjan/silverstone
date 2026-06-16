@@ -3,8 +3,7 @@
 set -ouex pipefail
 
 dnf -y install \
-	rocm-hip \
-	rocminfo \
-	rocm-opencl \
-	rocm-smi \
-	rocm-clinfo
+    rocm-hip \
+    rocminfo \
+    rocm-opencl \
+    rocm-smi

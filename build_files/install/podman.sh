@@ -3,8 +3,9 @@
 set -ouex pipefail
 
 dnf -y install \
-	podman \
-	podman-compose \
-	podman-tui
+    podlet \
+    podman \
+    podman-compose \
+    podman-tui
 
 systemctl enable podman.socket
