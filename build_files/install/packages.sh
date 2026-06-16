@@ -14,6 +14,7 @@ PACKAGES=(
     grc
     lshw
     lm_sensors
+    mosh
     ngrep
     nmap
     nvtop
