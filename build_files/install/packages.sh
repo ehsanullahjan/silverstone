@@ -8,6 +8,7 @@ PACKAGES=(
     btop
     ddcutil
     distrobox
+    et
     eza
     fastfetch
     fd-find
