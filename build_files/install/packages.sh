@@ -2,8 +2,14 @@
 
 set -ouex pipefail
 
-PACKAGES=(
+EXCLUDED_PACKAGES=(
+    ptyxis
+)
+dnf -y remove "${EXCLUDED_PACKAGES[@]}"
+
+INCLUDED_PACKAGES=(
     adw-gtk3-theme
+    alacritty
     bat
     btop
     ddcutil
@@ -30,4 +36,4 @@ PACKAGES=(
     zoxide
     zsh
 )
-dnf -y install "${PACKAGES[@]}"
+dnf -y install "${INCLUDED_PACKAGES[@]}"
