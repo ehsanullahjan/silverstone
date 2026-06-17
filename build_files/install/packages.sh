@@ -3,6 +3,7 @@
 set -ouex pipefail
 
 PACKAGES=(
+    adw-gtk3-theme
     bat
     btop
     ddcutil
