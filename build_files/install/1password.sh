@@ -14,4 +14,5 @@ cat <<-EOF >/etc/yum.repos.d/1password.repo
 EOF
 dnf config-manager setopt 1password.enabled=0
 
+groupadd -r -g 31001 onepassword
 dnf -y --enable-repo=1password install 1password
