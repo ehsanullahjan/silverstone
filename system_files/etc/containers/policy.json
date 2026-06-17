@@ -1,10 +1,16 @@
 {
   "default": [
     {
-      "type": "insecureAcceptAnything"
+      "type": "reject"
     }
   ],
   "transports": {
+    "containers-storage": {
+      "": [{ "type": "insecureAcceptAnything" }]
+    },
+    "docker-daemon": {
+      "": [{ "type": "insecureAcceptAnything" }]
+    },
     "docker": {
       "ghcr.io/ehsanullahjan/silverstone": [
         {
