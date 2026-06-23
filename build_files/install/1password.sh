@@ -18,7 +18,7 @@ dnf config-manager setopt 1password.enabled=0
 groupadd -r -g 31001 onepassword
 groupadd -r -g 31002 onepassword-mcp
 
-# Ensure systemd actually creates the groups on system boot
+# Create sysusers.d entries for 1password groups
 cat <<-EOF >/usr/lib/sysusers.d/1password.conf
 	g onepassword 31001 -
 	g onepassword-mcp 31002 -
