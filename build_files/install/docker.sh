@@ -17,4 +17,9 @@ dnf -y --enable-repo=docker-ce-stable --enable-repo=copr:copr.fedorainfracloud.o
     docker-ce-cli \
     lazydocker
 
+# Create sysusers.d entry for docker group
+cat <<-EOF >/usr/lib/sysusers.d/docker.conf
+	g docker - -
+EOF
+
 systemctl enable docker.socket
