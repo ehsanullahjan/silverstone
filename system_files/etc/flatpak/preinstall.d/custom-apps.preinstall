@@ -1,0 +1,35 @@
+[Flatpak Preinstall be.alexandervanhee.gradia]
+Branch=stable
+IsRuntime=false
+
+[Flatpak Preinstall com.github.PintaProject.Pinta]
+Branch=stable
+IsRuntime=false
+
+[Flatpak Preinstall com.github.marhkb.Pods]
+Branch=stable
+IsRuntime=false
+
+[Flatpak Preinstall com.github.tchx84.Flatseal]
+Branch=stable
+IsRuntime=false
+
+[Flatpak Preinstall com.mattjakeman.ExtensionManager]
+Branch=stable
+IsRuntime=false
+
+[Flatpak Preinstall com.ranfdev.DistroShelf]
+Branch=stable
+IsRuntime=false
+
+[Flatpak Preinstall net.nokyan.Resources]
+Branch=stable
+IsRuntime=false
+
+[Flatpak Preinstall page.codeberg.Imaginer.Ignition]
+Branch=stable
+IsRuntime=false
+
+[Flatpak Preinstall io.github.refi64.Refine]
+Branch=stable
+IsRuntime=false
