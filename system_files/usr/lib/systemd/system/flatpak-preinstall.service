@@ -1,0 +1,17 @@
+[Unit]
+Description=Install System Flatpaks
+After=flathub-init.service network-online.target
+Requires=flathub-init.service
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+
+ExecStart=/usr/bin/flatpak --system preinstall -y
+
+TimeoutStartSec=90m
+TimeoutStopFailureMode=abort
+
+[Install]
+WantedBy=multi-user.target

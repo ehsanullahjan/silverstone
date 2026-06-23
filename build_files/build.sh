@@ -20,3 +20,4 @@ rsync -rvK /ctx/system_files/ /
 /ctx/build_files/install/yazi.sh
 
 /ctx/build_files/install/1password.sh
+/ctx/build_files/install/flatpaks.sh

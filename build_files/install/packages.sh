@@ -3,6 +3,7 @@
 set -ouex pipefail
 
 EXCLUDED_PACKAGES=(
+    gnome-system-monitor
     ptyxis
 )
 dnf -y remove "${EXCLUDED_PACKAGES[@]}"
