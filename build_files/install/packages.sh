@@ -13,7 +13,6 @@ INCLUDED_PACKAGES=(
     alacritty
     bat
     btop
-    dbus-x11
     ddcutil
     distrobox
     et
