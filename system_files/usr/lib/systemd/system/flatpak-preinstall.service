@@ -8,7 +8,8 @@ Wants=network-online.target
 Type=oneshot
 RemainAfterExit=yes
 
-ExecStart=/usr/bin/dbus-run-session /usr/bin/flatpak --system preinstall -y
+Environment=DBUS_SESSION_BUS_ADDRESS=unix:path=/run/dbus/system_bus_socket
+ExecStart=/usr/bin/flatpak --system preinstall -y
 
 TimeoutStartSec=90m
 TimeoutStopFailureMode=abort
