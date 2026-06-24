@@ -26,10 +26,10 @@ IsRuntime=false
 Branch=stable
 IsRuntime=false
 
-[Flatpak Preinstall page.codeberg.Imaginer.Ignition]
+[Flatpak Preinstall io.github.flattool.Ignition]
 Branch=stable
 IsRuntime=false
 
-[Flatpak Preinstall io.github.refi64.Refine]
+[Flatpak Preinstall page.tesk.Refine]
 Branch=stable
 IsRuntime=false
