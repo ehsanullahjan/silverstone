@@ -25,6 +25,11 @@
         {
           "type": "insecureAcceptAnything"
         }
+      ],
+      "quay.io": [
+        {
+          "type": "insecureAcceptAnything"
+        }
       ]
     }
   }
