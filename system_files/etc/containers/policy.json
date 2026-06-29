@@ -20,6 +20,11 @@
             "type": "matchRepository"
           }
         }
+      ],
+      "docker.io": [
+        {
+          "type": "insecureAcceptAnything"
+        }
       ]
     }
   }
