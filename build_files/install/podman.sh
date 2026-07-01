@@ -9,3 +9,4 @@ dnf -y install \
     podman-tui
 
 systemctl enable podman.socket
+systemctl enable podman-auto-update.timer
