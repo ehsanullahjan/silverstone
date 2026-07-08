@@ -22,8 +22,8 @@ INCLUDED_PACKAGES=(
 	fd-find
 	fzf
 	grc
-	lshw
 	lm_sensors
+	lshw
 	mosh
 	ngrep
 	nmap
