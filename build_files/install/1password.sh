@@ -24,4 +24,4 @@ cat <<-EOF >/usr/lib/sysusers.d/1password.conf
 	g onepassword-mcp 31002 -
 EOF
 
-dnf -y --enable-repo=1password install 1password
+dnf -y --enable-repo=1password install 1password 1password-cli
