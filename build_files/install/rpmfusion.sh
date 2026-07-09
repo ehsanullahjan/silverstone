@@ -21,7 +21,7 @@ dnf -y install --setopt="install_weak_deps=False" --exclude=PackageKit-gstreamer
 	pipewire-codec-aptx
 
 # Enable hw-accel for AMD hardware
-dnf -y install mesa-va-drivers-freeworld
+dnf -y install libva-utils mesa-va-drivers-freeworld
 
 dnf config-manager setopt \
 	fedora-cisco-openh264.enabled=0 \
