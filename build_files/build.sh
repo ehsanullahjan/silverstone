@@ -2,7 +2,7 @@
 
 set -ouex pipefail
 
-rsync -rvK /ctx/system_files/ /
+/ctx/build_files/pre-build.sh
 
 /ctx/build_files/install/rocm.sh
 /ctx/build_files/install/rpmfusion.sh
@@ -22,3 +22,5 @@ rsync -rvK /ctx/system_files/ /
 
 /ctx/build_files/install/1password.sh
 /ctx/build_files/install/flatpaks.sh
+
+/ctx/build_files/post-build.sh
