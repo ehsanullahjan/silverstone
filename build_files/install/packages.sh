@@ -16,20 +16,13 @@ INCLUDED_PACKAGES=(
 	dbus-daemon
 	ddcutil
 	distrobox
-	et
 	eza
 	fastfetch
 	fd-find
 	fzf
 	grc
-	lm_sensors
-	lshw
-	mosh
-	ngrep
-	nmap
 	nvtop
 	ripgrep
-	socat
 	tealdeer
 	tmux
 	trash-cli
