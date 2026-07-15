@@ -12,18 +12,23 @@
       "": [{ "type": "insecureAcceptAnything" }]
     },
     "docker": {
-      "ghcr.io/ehsanullahjan/silverstone": [
-        {
-          "type": "sigstoreSigned",
-          "keyPath": "/etc/pki/containers/silverstone.pub",
-          "signedIdentity": {
-            "type": "matchRepository"
-          }
-        }
-      ],
       "docker.io": [
         {
           "type": "insecureAcceptAnything"
+        }
+      ],
+      "ghcr.io": [
+        {
+          "type": "insecureAcceptAnything"
+        }
+      ],
+      "ghcr.io/ehsanullahjan/yellowstone": [
+        {
+          "type": "sigstoreSigned",
+          "keyPath": "/etc/pki/containers/yellowstone.pub",
+          "signedIdentity": {
+            "type": "matchRepository"
+          }
         }
       ],
       "quay.io": [
