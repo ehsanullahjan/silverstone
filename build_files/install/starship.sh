@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -ouex pipefail
+set -euxo pipefail
 
 dnf copr -y enable atim/starship
 dnf config-manager setopt copr:copr.fedorainfracloud.org:atim:starship.enabled=0

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -ouex pipefail
+set -euxo pipefail
 
 dnf -y copr enable che/nerd-fonts
 dnf config-manager setopt copr:copr.fedorainfracloud.org:che:nerd-fonts.enabled=0

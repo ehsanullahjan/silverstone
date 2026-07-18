@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -ouex pipefail
+set -euxo pipefail
 
 dnf copr -y enable atim/lazygit
 dnf config-manager setopt copr:copr.fedorainfracloud.org:atim:lazygit.enabled=0

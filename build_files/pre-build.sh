@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -ouex pipefail
+set -euxo pipefail
 
 # Enable dnf config-manager
 dnf -y install 'dnf5-command(config-manager)' rsync

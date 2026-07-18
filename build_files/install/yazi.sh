@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -ouex pipefail
+set -euxo pipefail
 
 dnf copr -y enable lihaohong/yazi
 dnf config-manager setopt copr:copr.fedorainfracloud.org:lihaohong:yazi.enabled=0

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -ouex pipefail
+set -euxo pipefail
 
 rpm --import https://pkgs.tailscale.com/stable/fedora/repo.gpg
 cat <<-EOF >/etc/yum.repos.d/tailscale.repo

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -ouex pipefail
+set -euxo pipefail
 
 # Enable rpmfusion and its dependencies
 dnf config-manager setopt fedora-cisco-openh264.enabled=1

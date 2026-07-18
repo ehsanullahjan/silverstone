@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -ouex pipefail
+set -euxo pipefail
 
 rpm --import https://downloads.1password.com/linux/keys/1password.asc
 cat <<-EOF >/etc/yum.repos.d/1password.repo
