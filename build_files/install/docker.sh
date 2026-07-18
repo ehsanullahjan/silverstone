@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -ouex pipefail
+set -euxo pipefail
 
 dnf config-manager addrepo --from-repofile https://download.docker.com/linux/fedora/docker-ce.repo
 dnf config-manager setopt docker-ce-stable.enabled=0

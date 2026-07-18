@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -ouex pipefail
+set -euxo pipefail
 
 # Disable Fedora flatpak remote
 systemctl disable flatpak-add-fedora-repos.service

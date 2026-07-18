@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -ouex pipefail
+set -euxo pipefail
 
 dnf copr -y enable fernando-debian/dysk
 dnf config-manager setopt copr:copr.fedorainfracloud.org:fernando-debian:dysk.enabled=0

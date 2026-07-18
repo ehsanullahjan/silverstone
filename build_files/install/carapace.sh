@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -ouex pipefail
+set -euxo pipefail
 
 cat <<-EOF >/etc/yum.repos.d/fury.repo
 	[fury]
