@@ -14,12 +14,19 @@ cat <<-EOF >/etc/yum.repos.d/1password.repo
 EOF
 dnf config-manager setopt 1password.enabled=0
 
-# Ensure 1pass post-install scripts can find the groups during build
+# 1password et al. are relatively misbehaved packages, in particular on atomic distributions. Out of
+# the box, the 1password app fails to communicate with its companion CLI and (browser) extension.
+# Furthermore, due to group ID drift on atomic distros, even assuming a user syncs 1Password groups
+# to /etc/group, relevant files under /opt/1Password end up being inaccessible, breaking the apps or
+# their integration. Therefore, we must manually create groups with IDs that are consistent across
+# builds both when building and at runtime.
+
+# Ensure install scripts can find 1password groups during build
 groupadd -r -g 31001 onepassword
 groupadd -r -g 31002 onepassword-mcp
 groupadd -r -g 31003 onepassword-cli
 
-# Create sysusers.d entries for 1password groups
+# Create sysusers.d entries to persist 1password groups
 cat <<-EOF >/usr/lib/sysusers.d/1password.conf
 	g onepassword 31001 -
 	g onepassword-mcp 31002 -
