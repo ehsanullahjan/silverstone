@@ -25,7 +25,7 @@
       "ghcr.io/ehsanullahjan/yellowstone": [
         {
           "type": "sigstoreSigned",
-          "keyPath": "/etc/pki/containers/yellowstone.pub",
+          "keyPath": "/usr/lib/pki/containers/silverstone.pub",
           "signedIdentity": {
             "type": "matchRepository"
           }
