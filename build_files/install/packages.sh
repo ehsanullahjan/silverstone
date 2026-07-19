@@ -13,7 +13,6 @@ INCLUDED_PACKAGES=(
 	adw-gtk3-theme
 	alacritty
 	bat
-	btop
 	dbus-daemon
 	ddcutil
 	distrobox
@@ -22,7 +21,6 @@ INCLUDED_PACKAGES=(
 	fd-find
 	fzf
 	grc
-	nvtop
 	ripgrep
 	tealdeer
 	tmux
