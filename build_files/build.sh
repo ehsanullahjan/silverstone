@@ -12,6 +12,8 @@ set -euxo pipefail
 /ctx/build_files/install/libvirt.sh
 /ctx/build_files/install/tailscale.sh
 
+/ctx/build_files/install/sysmon.sh
+
 /ctx/build_files/install/carapace.sh
 /ctx/build_files/install/dysk.sh
 /ctx/build_files/install/fonts.sh
