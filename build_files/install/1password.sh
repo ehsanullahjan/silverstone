@@ -33,4 +33,8 @@ cat <<-EOF >/usr/lib/sysusers.d/1password.conf
 	g onepassword-cli 31003 -
 EOF
 
-dnf -y --enable-repo=1password install 1password 1password-cli
+# dnf -y --enable-repo=1password install 1password 1password-cli
+echo "WARN: Skipping 1Password and 1Password CLI installation due to broken package"
+echo "INFO: Check [0] and [1] to see if a fix is available, and restore the installation"
+echo "INFO: [0]: https://discussion.fedoraproject.org/t/1password-failing-to-install/196706"
+echo "INFO: [1]: https://www.1password.community/1password-at-home-31/update-to-fedora-silverblue-fails-25075"
