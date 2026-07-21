@@ -100,7 +100,7 @@ build $target_image=image_name $tag=default_tag:
 
     BUILD_ARGS=()
     LABELS=()
-    if git rev-parse --short HEAD &>/dev/null; then
+    if [[ -z "$(git status -s)" ]]; then
         GIT_SHA=$(git rev-parse --short HEAD)
         LABELS+=("--label" "io.artifacthub.package.readme-url=https://raw.githubusercontent.com/{{ repo_organization }}/{{ image_name }}/${GIT_SHA}/README.md")
         LABELS+=("--label" "org.opencontainers.image.documentation=https://raw.githubusercontent.com/{{ repo_organization }}/{{ image_name }}/${GIT_SHA}/README.md")
@@ -191,7 +191,7 @@ generate-build-tags $target_image=image_name $tag=default_tag:
 
     DATE=$(date +%Y%m%d)
     BUILD_TAGS=()
-    if git rev-parse --short HEAD &>/dev/null; then
+    if [[ -z "$(git status -s)" ]]; then
         GIT_SHA=$(git rev-parse --short HEAD)
         BUILD_TAGS+=("${tag}-${GIT_SHA}")
         BUILD_TAGS+=("${tag}-${DATE}-${GIT_SHA}")
@@ -246,7 +246,7 @@ image_name $target_image=image_name:
 # 1. Check if the script is already running as root or under sudo.
 # 2. Check if target image is in the non-root podman container storage)
 # 3. If the image is found, load it into rootful podman using podman scp.
-# 4. If the image is not found, pull it from the repository into reootful podman.
+# 4. If the image is not found, pull it from the remote repository into reootful podman.
 
 _rootful_load_image $target_image=image_name $tag=default_tag:
     #!/usr/bin/bash
@@ -322,6 +322,8 @@ _build-bib $target_image $tag $type $config: (_rootful_load_image target_image t
 # Parameters:
 #   target_image: The name of the image to build (ex. localhost/fedora)
 #   tag: The tag of the image to build (ex. latest)
+#   type: The type of image to build (ex. qcow2, raw, iso)
+#   config: The configuration file to use for the build (deafult: disk_config/disk.toml)
 
 # Example: just _rebuild-bib localhost/fedora latest qcow2 disk_config/disk.toml
 _rebuild-bib $target_image $tag $type $config: (build target_image tag) && (_build-bib target_image tag type config)
