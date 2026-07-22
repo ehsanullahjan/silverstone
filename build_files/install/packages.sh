@@ -11,7 +11,6 @@ dnf -y remove "${EXCLUDED_PACKAGES[@]}"
 
 INCLUDED_PACKAGES=(
 	adw-gtk3-theme
-	alacritty
 	bat
 	dbus-daemon
 	ddcutil
