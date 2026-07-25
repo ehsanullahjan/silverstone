@@ -6,4 +6,4 @@ set -euxo pipefail
 rsync -rvK /ctx/system_files/pre-build/ /
 
 # Enable dnf config-manager
-dnf -y install 'dnf5-command(config-manager)' rsync
+dnf -y install 'dnf5-command(config-manager)'
