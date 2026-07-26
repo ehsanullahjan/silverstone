@@ -13,20 +13,25 @@ INCLUDED_PACKAGES=(
 	adw-gtk3-theme
 	alacritty
 	bat
+	carapace
+	chafa
 	dbus-daemon
 	ddcutil
 	distrobox
+	dysk
 	eza
 	fastfetch
 	fd-find
 	fzf
 	grc
 	ripgrep
+	starship
 	tealdeer
 	tmux
 	trash-cli
 	vim
 	xdg-terminal-exec
+	yazi
 	zoxide
 	zsh
 )
