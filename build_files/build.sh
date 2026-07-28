@@ -7,7 +7,7 @@ set -euxo pipefail
 /ctx/build_files/install/amd-hwe.sh
 /ctx/build_files/install/multimedia.sh
 
-/ctx/build_files/install/tailscale.sh
+/ctx/build_files/install/vpn.sh
 /ctx/build_files/install/montools.sh
 
 /ctx/build_files/install/docker.sh
