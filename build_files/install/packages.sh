@@ -14,7 +14,6 @@ INCLUDED_PACKAGES=(
 	alacritty
 	bat
 	carapace
-	chafa
 	dbus-daemon
 	ddcutil
 	distrobox
@@ -31,7 +30,6 @@ INCLUDED_PACKAGES=(
 	trash-cli
 	vim
 	xdg-terminal-exec
-	yazi
 	zoxide
 	zsh
 )
