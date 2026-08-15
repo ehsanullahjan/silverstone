@@ -12,6 +12,7 @@ dnf -y remove "${EXCLUDED_PACKAGES[@]}"
 INCLUDED_PACKAGES=(
 	adw-gtk3-theme
 	alacritty
+	autofs
 	bat
 	borgbackup
 	carapace
