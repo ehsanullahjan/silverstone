@@ -2,4 +2,4 @@
 
 set -euxo pipefail
 
-dnf -y install et mosh nfs-client-utils
+dnf -y install mosh nfs-client-utils
