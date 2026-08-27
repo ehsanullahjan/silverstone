@@ -8,6 +8,5 @@ pwconv && grpconv
 # Copy custom configs
 rsync -rvK /ctx/system_files/post-build/ /
 
-# Disable terra repos
+# Disable main terra repo
 dnf config-manager setopt terra.enabled=0
-dnf config-manager setopt terra-mesa.enabled=0
