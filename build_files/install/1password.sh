@@ -2,4 +2,4 @@
 
 set -euxo pipefail
 
-dnf -y install 1password 1password-cli
+dnf -y --enable-repo terra install 1password 1password-cli
