@@ -2,4 +2,4 @@
 
 set -euxo pipefail
 
-dnf -y install git lazygit difftastic git-delta
+dnf -y --enable-repo terra install git lazygit difftastic git-delta
