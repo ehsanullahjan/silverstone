@@ -19,19 +19,6 @@ cat <<-'EOF' >/etc/yum.repos.d/terra-mesa.repo
 	enabled_metadata=1
 	countme=1
 	priority=80
-
-	[terra-mesa-source]
-	name=Terra $releasever (Mesa) - Source
-	#baseurl=https://repos.fyralabs.com/terra$releasever-mesa-source
-	metalink=https://tetsudou.fyralabs.com/metalink?repo=terra$releasever-mesa-source&arch=$basearch
-	metadata_expire=6h
-	type=rpm
-	gpgcheck=1
-	gpgkey=https://raw.githubusercontent.com/terrapkg/packages/f$releasever/anda/terra/gpg-keys/RPM-GPG-KEY-terra$releasever-mesa-source
-	repo_gpgcheck=1
-	enabled=0
-	enabled_metadata=0
-	priority=80
 EOF
 dnf config-manager setopt terra-mesa.enabled=0
 
