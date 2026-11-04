@@ -1,5 +1,5 @@
 ARG FEDORA_IMAGE_NAME="fedora-silverblue"
-ARG FEDORA_IMAGE_VERSION="44"
+ARG FEDORA_IMAGE_VERSION="45"
 
 # Allow build scripts to be referenced without being copied into the final image
 FROM scratch AS ctx
