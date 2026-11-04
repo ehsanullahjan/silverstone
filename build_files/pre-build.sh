@@ -27,17 +27,5 @@ cat <<-'EOF' >/etc/yum.repos.d/terra.repo
 	enabled=1
 	enabled_metadata=1
 	countme=1
-
-	[terra-source]
-	name=Terra $releasever - Source
-	#baseurl=https://repos.fyralabs.com/terra$releasever-source
-	metalink=https://tetsudou.fyralabs.com/metalink?repo=terra$releasever-source&arch=$basearch
-	metadata_expire=6h
-	type=rpm
-	gpgcheck=1
-	gpgkey=https://raw.githubusercontent.com/terrapkg/packages/f$releasever/anda/terra/gpg-keys/RPM-GPG-KEY-terra$releasever-source
-	repo_gpgcheck=1
-	enabled=0
-	enabled_metadata=0
 EOF
 dnf config-manager setopt terra.enabled=0
