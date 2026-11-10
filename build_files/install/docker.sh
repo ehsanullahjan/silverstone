@@ -17,5 +17,3 @@ dnf -y --enable-repo=docker-ce-stable install \
 cat <<-EOF >/usr/lib/sysusers.d/docker.conf
 	g docker - -
 EOF
-
-systemctl enable docker.socket

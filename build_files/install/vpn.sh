@@ -15,4 +15,3 @@ EOF
 dnf config-manager setopt tailscale-stable.enabled=0
 
 dnf -y --enable-repo=tailscale-stable install tailscale
-systemctl enable tailscaled.service
