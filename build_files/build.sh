@@ -4,8 +4,8 @@ set -euxo pipefail
 
 /ctx/build_files/pre-build.sh
 
-/ctx/build_files/install/gpu.sh
 /ctx/build_files/install/multimedia.sh
+/ctx/build_files/install/gpu.sh
 
 /ctx/build_files/install/montools.sh
 /ctx/build_files/install/systools.sh

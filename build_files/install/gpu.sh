@@ -22,4 +22,16 @@ cat <<-'EOF' >/etc/yum.repos.d/terra-mesa.repo
 EOF
 dnf config-manager setopt terra-mesa.enabled=0
 
-dnf -y --enable-repo=terra-mesa install mesa-dri-drivers mesa-va-drivers mesa-vulkan-drivers
+# Enable shared GPU acceleration (OpenGL and Vulkan)
+dnf -y --enable-repo=terra-mesa install \
+	mesa-dri-drivers \
+	mesa-vulkan-drivers
+
+# Enable AMD-specific GPU acceleration
+dnf -y --enable-repo=terra-mesa install \
+	mesa-va-drivers
+
+# Enable Intel-specific GPU acceleration
+dnf -y --enable-repo=rpmfusion-nonfree install --allowerasing \
+	intel-media-driver \
+	intel-vpl-gpu-rt
