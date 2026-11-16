@@ -25,6 +25,7 @@ INCLUDED_PACKAGES=(
 	fd-find
 	fzf
 	grc
+	mise
 	ripgrep
 	starship
 	tldr
