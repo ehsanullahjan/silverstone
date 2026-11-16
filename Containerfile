@@ -1,3 +1,4 @@
+ARG FEDORA_IMAGE_REGISTRY="quay.io/fedora"
 ARG FEDORA_IMAGE_NAME="fedora-silverblue"
 ARG FEDORA_IMAGE_VERSION="45"
 
@@ -7,7 +8,7 @@ COPY build_files /build_files
 COPY system_files /system_files
 
 ### Base Image
-FROM quay.io/fedora/${FEDORA_IMAGE_NAME}:${FEDORA_IMAGE_VERSION}
+FROM ${FEDORA_IMAGE_REGISTRY}/${FEDORA_IMAGE_NAME}:${FEDORA_IMAGE_VERSION}
 
 ### [IM]MUTABLE /opt
 ## Some bootable images, like Fedora, have /opt symlinked to /var/opt, in order to
